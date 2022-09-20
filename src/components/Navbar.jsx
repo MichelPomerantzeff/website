@@ -145,6 +145,8 @@ function Navbar(props) {
     }, 0)
 
 
+
+
     // Hide element if user clicks outside
     useEffect(() => {
         const isOutside = e => {

@@ -125,10 +125,10 @@ function SliderItem(props) {
     const { addItemToCart, removeItemFromCart, products } = useContext(GlobalContext)
     const qnt = products.find(i => i.title === props.item.title)
 
+    // 
     useEffect(() => {
         setIsLargeButton(qnt?.units > 0 ? false : true)
-    }, [products.length])
-    
+    }, [products.length])    
 
     return (
         <Card itemsPerScreen={props.itemsPerScreen}>

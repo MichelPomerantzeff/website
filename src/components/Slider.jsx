@@ -111,9 +111,6 @@ function Slider(props) {
         } else {
             setSelector(combos)
         }
-
-         
-
     }, [props.header])
 
     // Set direction of image slider
@@ -137,15 +134,12 @@ function Slider(props) {
         }
 
     }
+    useEffect(() => {
+        window.addEventListener("resize", updateItemsDisplayed)
+        return () => window.removeEventListener("resize", updateItemsDisplayed)
+    })
 
-        // Hide element if user clicks outside
-        useEffect(() => {
-            window.addEventListener("resize", updateItemsDisplayed)
-            return () => window.removeEventListener("resize", updateItemsDisplayed)
-        })
-
-
-    
+    window.scrollTo({top:0})
 
     // Set quantity of progress bar displayed
     let bars = []
@@ -153,13 +147,6 @@ function Slider(props) {
     for (let i = 0; i < totalOfBars; i++) {
         bars.push(i)
     }
-
-
-
-
-
-
-
 
 
     return (
