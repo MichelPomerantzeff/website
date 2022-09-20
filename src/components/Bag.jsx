@@ -68,8 +68,6 @@ function Cart(props) {
     
     const [display, setDisplay] = useState("flex")
 
-    console.log(display)
-
     return (
         <Container display={display}>
             <Wrapper>

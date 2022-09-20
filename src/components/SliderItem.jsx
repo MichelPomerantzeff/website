@@ -127,8 +127,7 @@ function SliderItem(props) {
 
     useEffect(() => {
         setIsLargeButton(qnt?.units > 0 ? false : true)
-        console.log("RENDER THE FUUCKING PAGE BABY")
-    })
+    }, [products.length])
     
 
     return (

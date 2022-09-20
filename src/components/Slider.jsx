@@ -137,7 +137,15 @@ function Slider(props) {
         }
 
     }
-    window.addEventListener("resize", updateItemsDisplayed)
+
+        // Hide element if user clicks outside
+        useEffect(() => {
+            window.addEventListener("resize", updateItemsDisplayed)
+            return () => window.removeEventListener("resize", updateItemsDisplayed)
+        })
+
+
+    
 
     // Set quantity of progress bar displayed
     let bars = []
