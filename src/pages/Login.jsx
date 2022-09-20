@@ -161,7 +161,7 @@ function Login(props) {
                             <ButtonContainer>
                                 <Button>Entrar</Button>
 
-                                <Link style={{ textDecoration: "none" }} to={"/register"}>
+                                <Link style={{ textDecoration: "none" }} to={"/website/register"}>
                                     <Button toggle={"toggle"} >Criar conta</Button>
                                 </Link>
                             </ButtonContainer>
