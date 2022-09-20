@@ -22,7 +22,7 @@ function App() {
       <GlobalProvider>
         <Navbar />
         <Routes>
-          <Route path="/website/home" element={<Home />} />
+          <Route path="/website" element={<Home />} />
         </Routes>
         <Routes>
           <Route path="/website/about" element={<About />} />

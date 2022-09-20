@@ -169,7 +169,7 @@ function Navbar(props) {
                         isSideMenuOpen &&
 
                         < SideMenu >
-                            <Link to={"/website/home"}>
+                            <Link to={"/website"}>
                                 <SideMenuOption>Inicio</SideMenuOption>
                             </Link>
 
@@ -198,7 +198,7 @@ function Navbar(props) {
 
                 </MenuIcon>
                 <Left>
-                    <Link onClick={() => window.scrollY(0)} to={"/website/home"}>
+                    <Link onClick={() => window.scrollY(0)} to={"/website"}>
                         <MenuItem>
                             <Icon>
                                 <Home />
