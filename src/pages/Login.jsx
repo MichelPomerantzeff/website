@@ -35,7 +35,7 @@ const Header = styled.h2`
     ${laptop({ fontSize: "1.2rem" })}
     ${mobile({ fontSize: "1rem" })}
     `
-const Form = styled.form`
+const Form = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column; 

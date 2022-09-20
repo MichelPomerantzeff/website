@@ -57,7 +57,7 @@ const Header = styled.h2`
     ${laptop({ fontSize: "1.2rem" })}
     ${mobile({ fontSize: "1rem" })}
     `
-const Form = styled.form`
+const Form = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column; 
@@ -157,7 +157,7 @@ function Login(props) {
 
                 <WrapperLeft>
                     <Left>
-                        <Link style={{ textDecoration: "none", width: "100%" }} to={"/login"}>
+                        <Link style={{ textDecoration: "none", width: "100%" }} to={"/website/login"}>
                             <GoBack>
                                 <Icon>
                                     <ArrowBack />
@@ -175,7 +175,7 @@ function Login(props) {
                             <ButtonContainer>
                                 <Button>Continuar</Button>
 
-                                <Link to={"/login"}>
+                                <Link to={"/website/login"}>
                                     <Button toggle={"toggle"} >JÁ TENHO UMA CONTA</Button>
                                 </Link>
 
