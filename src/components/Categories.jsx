@@ -23,7 +23,7 @@ function Categories(props) {
             {categories.map(item => {
                 return (
                     props.filter !== item.id &&
-                    <Link key={item.id} onClick={() => window.scrollY(0)} to={`/${item.id}`}>
+                    <Link key={item.id} onClick={() => window.scrollY(0)} to={`/website/${item.id}`}>
                         <CategoryItem item={item} />
                     </Link>
                 )

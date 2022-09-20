@@ -22,31 +22,31 @@ function App() {
       <GlobalProvider>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/website/home" element={<Home />} />
         </Routes>
         <Routes>
-          <Route path="/about" element={<About />} />
+          <Route path="/website/about" element={<About />} />
         </Routes>
         <Routes>
-          <Route path="/food" element={<Food />} />
+          <Route path="/website/food" element={<Food />} />
         </Routes>
         <Routes>
-          <Route path="/drinks" element={<Drinks />} />
+          <Route path="/website/drinks" element={<Drinks />} />
         </Routes>
         <Routes>
-          <Route path="/dessert" element={<Dessert />} />
+          <Route path="/website/dessert" element={<Dessert />} />
         </Routes>
         <Routes>
-          <Route path="/combos" element={<Combos />} />
+          <Route path="/website/combos" element={<Combos />} />
         </Routes>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/website/login" element={<Login />} />
         </Routes>
         <Routes>
-          <Route path="/register" element={<Register />} />
+          <Route path="/website/register" element={<Register />} />
         </Routes>
         <Routes>
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/website/cart" element={<Cart />} />
         </Routes>
       </GlobalProvider>
       <Footer />

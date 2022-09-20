@@ -169,27 +169,27 @@ function Navbar(props) {
                         isSideMenuOpen &&
 
                         < SideMenu >
-                            <Link to={"/"}>
+                            <Link to={"/website/home"}>
                                 <SideMenuOption>Inicio</SideMenuOption>
                             </Link>
 
-                            <Link to={"/about"}>
+                            <Link to={"/website/about"}>
                                 <SideMenuOption>Sobre</SideMenuOption>
                             </Link>
 
-                            <Link to={"/food"}>
+                            <Link to={"/website/food"}>
                                 <SideMenuOption>Comida</SideMenuOption>
                             </Link>
 
-                            <Link to={"/drinks"}>
+                            <Link to={"/website/drinks"}>
                                 <SideMenuOption>Bebidas</SideMenuOption>
                             </Link>
 
-                            <Link to={"/dessert"}>
+                            <Link to={"/website/dessert"}>
                                 <SideMenuOption>Doces</SideMenuOption>
                             </Link>
 
-                            <Link to={"/combos"}>
+                            <Link to={"/website/combos"}>
                                 <SideMenuOption>Combos</SideMenuOption>
                             </Link>
 
@@ -198,7 +198,7 @@ function Navbar(props) {
 
                 </MenuIcon>
                 <Left>
-                    <Link onClick={() => window.scrollY(0)} to={"/"}>
+                    <Link onClick={() => window.scrollY(0)} to={"/website/home"}>
                         <MenuItem>
                             <Icon>
                                 <Home />
@@ -207,7 +207,7 @@ function Navbar(props) {
                         </MenuItem>
                     </Link>
 
-                    <Link to={"/about"}>
+                    <Link to={"/website/about"}>
                         <MenuItem>
                             <Icon>
                                 <Info />
@@ -226,17 +226,17 @@ function Navbar(props) {
                             isCategoriesOpen &&
 
                             <DropdownBox>
-                                <Link to={"/food"}>
+                                <Link to={"/website/food"}>
                                     <DropdownOption>Comida</DropdownOption>
                                 </Link>
 
-                                <Link to={"/drinks"}>
+                                <Link to={"/website/drinks"}>
                                     <DropdownOption>Bebidas</DropdownOption>
                                 </Link>
-                                <Link to={"/dessert"}>
+                                <Link to={"/website/dessert"}>
                                     <DropdownOption>Doces</DropdownOption>
                                 </Link>
-                                <Link to={"/combos"}>
+                                <Link to={"/website/combos"}>
                                     <DropdownOption>Combos</DropdownOption>
                                 </Link>
                             </DropdownBox>
@@ -253,7 +253,7 @@ function Navbar(props) {
 
                 <Right>
 
-                    <Link to={"/login"}>
+                    <Link to={"/website/login"}>
                         <MenuItem>
                             <Icon>
                                 <User />
@@ -264,7 +264,7 @@ function Navbar(props) {
                         </MenuItem>
                     </Link>
 
-                    <Link to={"/cart"}>
+                    <Link to={"/website/cart"}>
                         <MenuItem>
                             <Badge badgeContent={cartUnits} color="primary">
                                 <Icon>
