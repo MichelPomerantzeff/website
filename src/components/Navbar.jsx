@@ -169,29 +169,29 @@ function Navbar(props) {
                         isSideMenuOpen &&
 
                         < SideMenu >
-                            <Link to={"/website"}>
+                            {/* <Link to={"/website"}> */}
                                 <SideMenuOption>Inicio</SideMenuOption>
-                            </Link>
+                            {/* </Link> */}
 
-                            <Link to={"/website/about"}>
+                            {/* <Link to={"/website/about"}> */}
                                 <SideMenuOption>Sobre</SideMenuOption>
-                            </Link>
+                            {/* </Link> */}
 
-                            <Link to={"/website/food"}>
+                            {/* <Link to={"/website/food"}> */}
                                 <SideMenuOption>Comida</SideMenuOption>
-                            </Link>
+                            {/* </Link> */}
 
-                            <Link to={"/website/drinks"}>
+                            {/* <Link to={"/website/drinks"}> */}
                                 <SideMenuOption>Bebidas</SideMenuOption>
-                            </Link>
+                            {/* </Link> */}
 
-                            <Link to={"/website/dessert"}>
+                            {/* <Link to={"/website/dessert"}> */}
                                 <SideMenuOption>Doces</SideMenuOption>
-                            </Link>
+                            {/* </Link> */}
 
-                            <Link to={"/website/combos"}>
+                            {/* <Link to={"/website/combos"}> */}
                                 <SideMenuOption>Combos</SideMenuOption>
-                            </Link>
+                            {/* </Link> */}
 
                         </SideMenu>
                     }
@@ -226,19 +226,19 @@ function Navbar(props) {
                             isCategoriesOpen &&
 
                             <DropdownBox>
-                                <Link to={"/website/food"}>
+                                {/* <Link to={"/website/food"}> */}
                                     <DropdownOption>Comida</DropdownOption>
-                                </Link>
+                                {/* </Link> */}
 
-                                <Link to={"/website/drinks"}>
+                                {/* <Link to={"/website/drinks"}> */}
                                     <DropdownOption>Bebidas</DropdownOption>
-                                </Link>
-                                <Link to={"/website/dessert"}>
+                                {/* </Link> */}
+                                {/* <Link to={"/website/dessert"}> */}
                                     <DropdownOption>Doces</DropdownOption>
-                                </Link>
-                                <Link to={"/website/combos"}>
+                                {/* </Link> */}
+                                {/* <Link to={"/website/combos"}> */}
                                     <DropdownOption>Combos</DropdownOption>
-                                </Link>
+                                {/* </Link> */}
                             </DropdownBox>
                         }
                     </MenuItem>
