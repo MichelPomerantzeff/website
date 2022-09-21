@@ -151,13 +151,19 @@ const Text = styled.h1`
     `
 
 function Login(props) {
+
+    function signUp(e){
+        e.preventDefault()
+        console.log("signUp clicked")
+    }
+
     return (
         <LoginPage>
             <Container>
 
                 <WrapperLeft>
                     <Left>
-                        <Link style={{ textDecoration: "none", width: "100%" }} to={"/website/login"}>
+                        <Link style={{ textDecoration: "none", width: "100%" }} to={"/login"}>
                             <GoBack>
                                 <Icon>
                                     <ArrowBack />
@@ -173,9 +179,9 @@ function Login(props) {
                             </InputContainer>
 
                             <ButtonContainer>
-                                <Button>Continuar</Button>
+                                <Button type="submit" onClick={signUp}>Continuar</Button>
 
-                                <Link to={"/website/login"}>
+                                <Link to={"/login"}>
                                     <Button toggle={"toggle"} >JÁ TENHO UMA CONTA</Button>
                                 </Link>
 

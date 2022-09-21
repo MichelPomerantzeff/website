@@ -17,7 +17,6 @@ const Wrapper = styled.div`
     justify-content: center;
     flex: 1;
     `
-
 const Left = styled.div`
     /* background-color: red; */
     
@@ -33,7 +32,6 @@ const Left = styled.div`
     ${tablet({ gap: "15px", boxShadow: "0 1.5px 0 0 lightgray", padding: "5px 50px" })}
     ${mobile({ gap: "10px", padding: "0 50px" })}
     `
-
 const Title = styled.span`
     font-size: 1.2rem;
     text-align: center;
@@ -42,7 +40,6 @@ const Title = styled.span`
     ${bigTablet({ fontSize: ".9rem" })}
     ${mobile({ fontSize:".8rem" })}
     `
-
 const IconsWrapper = styled.div`
     display: flex;
     align-items: center;

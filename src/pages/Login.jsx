@@ -35,7 +35,7 @@ const Header = styled.h2`
     ${laptop({ fontSize: "1.2rem" })}
     ${mobile({ fontSize: "1rem" })}
     `
-const Form = styled.div`
+const Form = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column; 
@@ -145,6 +145,12 @@ const Text = styled.h1`
 
 
 function Login(props) {
+
+    function signIn(e){
+        e.preventDefault()
+        console.log("signIn clicked")
+    }
+
     return (
         <LoginPage>
             <Container>
@@ -159,9 +165,9 @@ function Login(props) {
                             </InputContainer>
 
                             <ButtonContainer>
-                                <Button>Entrar</Button>
+                                <Button type="submit" onClick={signIn}>Entrar</Button>
 
-                                <Link style={{ textDecoration: "none" }} to={"/website/register"}>
+                                <Link style={{ textDecoration: "none" }} to={"/register"}>
                                     <Button toggle={"toggle"} >Criar conta</Button>
                                 </Link>
                             </ButtonContainer>

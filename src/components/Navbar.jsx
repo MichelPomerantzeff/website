@@ -145,8 +145,6 @@ function Navbar(props) {
     }, 0)
 
 
-
-
     // Hide element if user clicks outside
     useEffect(() => {
         const isOutside = e => {
@@ -171,27 +169,27 @@ function Navbar(props) {
                         isSideMenuOpen &&
 
                         < SideMenu >
-                            <Link to={"/website/"}>
+                            <Link to={"/"}>
                                 <SideMenuOption>Inicio</SideMenuOption>
                             </Link>
 
-                            <Link to={"/website/about"}>
+                            <Link to={"/about"}>
                                 <SideMenuOption>Sobre</SideMenuOption>
                             </Link>
 
-                            <Link to={"/website/food"}>
+                            <Link to={"/food"}>
                                 <SideMenuOption>Comida</SideMenuOption>
                             </Link>
 
-                            <Link to={"/website/drinks"}>
+                            <Link to={"/drinks"}>
                                 <SideMenuOption>Bebidas</SideMenuOption>
                             </Link>
 
-                            <Link to={"/website/dessert"}>
+                            <Link to={"/dessert"}>
                                 <SideMenuOption>Doces</SideMenuOption>
                             </Link>
 
-                            <Link to={"/website/combos"}>
+                            <Link to={"/combos"}>
                                 <SideMenuOption>Combos</SideMenuOption>
                             </Link>
 
@@ -200,7 +198,7 @@ function Navbar(props) {
 
                 </MenuIcon>
                 <Left>
-                    <Link to={"/website/"} onClick={() => window.scrollY(0)}>
+                    <Link to={"/"} onClick={() => window.scrollY(0)}>
                         <MenuItem>
                             <Icon>
                                 <Home />
@@ -209,7 +207,7 @@ function Navbar(props) {
                         </MenuItem>
                     </Link>
 
-                    <Link to={"/website/about"}>
+                    <Link to={"/about"}>
                         <MenuItem>
                             <Icon>
                                 <Info />
@@ -228,17 +226,17 @@ function Navbar(props) {
                             isCategoriesOpen &&
 
                             <DropdownBox>
-                                <Link to={"/website/food"}>
+                                <Link to={"/food"}>
                                     <DropdownOption>Comida</DropdownOption>
                                 </Link>
 
-                                <Link to={"/website/drinks"}>
+                                <Link to={"/drinks"}>
                                     <DropdownOption>Bebidas</DropdownOption>
                                 </Link>
-                                <Link to={"/website/dessert"}>
+                                <Link to={"/dessert"}>
                                     <DropdownOption>Doces</DropdownOption>
                                 </Link>
-                                <Link to={"/website/combos"}>
+                                <Link to={"/combos"}>
                                     <DropdownOption>Combos</DropdownOption>
                                 </Link>
                             </DropdownBox>
@@ -255,7 +253,7 @@ function Navbar(props) {
 
                 <Right>
 
-                    <Link to={"/website/login"}>
+                    <Link to={"/login"}>
                         <MenuItem>
                             <Icon>
                                 <User />
@@ -266,7 +264,7 @@ function Navbar(props) {
                         </MenuItem>
                     </Link>
 
-                    <Link to={"/website/cart"}>
+                    <Link to={"/cart"}>
                         <MenuItem>
                             <Badge badgeContent={cartUnits} color="primary">
                                 <Icon>

@@ -11,7 +11,7 @@ import Drinks from "./pages/Drinks"
 import Dessert from "./pages/Dessert"
 import Combos from "./pages/Combos"
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
@@ -22,31 +22,31 @@ function App() {
       <GlobalProvider>
         <Navbar />
         <Routes>
-          <Route path="/website/" element={<Home />} />
+          <Route path="/" element={<Home />} />
         </Routes>
         <Routes>
-          <Route path="/website/about" element={<About />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Routes>
-          <Route path="/website/food" element={<Food />} />
+          <Route path="/food" element={<Food />} />
         </Routes>
         <Routes>
-          <Route path="/website/drinks" element={<Drinks />} />
+          <Route path="/drinks" element={<Drinks />} />
         </Routes>
         <Routes>
-          <Route path="/website/dessert" element={<Dessert />} />
+          <Route path="/dessert" element={<Dessert />} />
         </Routes>
         <Routes>
-          <Route path="/website/combos" element={<Combos />} />
+          <Route path="/combos" element={<Combos />} />
         </Routes>
         <Routes>
-          <Route path="/website/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
         <Routes>
-          <Route path="/website/register" element={<Register />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Routes>
-          <Route path="/website/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </GlobalProvider>
       <Footer />
