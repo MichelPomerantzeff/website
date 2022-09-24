@@ -22,7 +22,6 @@ const Header = styled.h1`
     ${bigTablet({ fontSize: "1.5rem" })}
     ${mobile({ fontSize: "1rem", })}
     `
-
 const OrdersWrapper = styled.h1`
     /* background: red; */
     flex: 1;
@@ -36,6 +35,7 @@ const EmptyOrderList = styled.div`
     border-radius: 10px;
     color: lightgray;
     padding: 50px;
+    margin: auto;
 
 
     ${bigTablet({ fontSize: "1.2rem" })}
