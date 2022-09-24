@@ -11,21 +11,24 @@ const OrdersContainer = styled.div`
     /* border: solid 1px red; */
     flex: 1;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     `
 const Header = styled.h1`
-    
-    margin: 20px;
+    /* background: blue; */
+    margin-top: 150px;
 
     ${bigTablet({ fontSize: "1.5rem" })}
     ${mobile({ fontSize: "1rem", })}
     `
 
 const OrdersWrapper = styled.h1`
+    /* background: red; */
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
+    gap: 30px;
     `
 
 const EmptyOrderList = styled.div`
@@ -45,7 +48,7 @@ function Orders(props) {
     const [user] = useAuthState(auth)
 
     const [orders, setOrders] = useState([])
-    
+
 
     useEffect(() => {
         if (user) {
@@ -73,9 +76,7 @@ function Orders(props) {
             <Header>Seus Pedidos</Header>
             <OrdersWrapper>
 
-                {
-                    !user && <Navigate to={'/'}/>
-                }
+                {!user && <Navigate to={'/'} />}
 
                 {
                     orders?.length > 0 ?

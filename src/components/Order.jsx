@@ -4,7 +4,7 @@ import moment from "moment"
 
 const OrderContainer = styled.div`
     border: solid 1px gray;
-    margin: 20px;
+    margin: auto;
     font-size: 1rem;
     padding: 20px;
     `
