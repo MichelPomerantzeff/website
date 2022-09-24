@@ -6,17 +6,17 @@ import { GlobalContext } from "../context/GlobalState"
 import { useNavigate } from "react-router-dom"
 
 const CartPage = styled.div`
+    flex: 1;
+    display: flex;
+    justify-content: center;
     `
 const Container = styled.div`
     /* background-color: greenyellow; */
-    min-height: 90vh;
     display: flex;
     flex-direction: column;
-    overflow: auto;
-    padding-top: 120px;
-    margin-bottom: 50px;
+    margin-top: 120px;
 
-    ${tablet({ margin: 0})}
+    ${tablet({ marginTop: "70px"})}
     `
 const Header = styled.h1`
     text-align: center;
@@ -267,7 +267,7 @@ function Cart(props) {
                                 <Label>Total:</Label>
                                 <Price>R$ {(subtotal + deliveryFee).toFixed(2)}</Price>
                             </SummaryText>
-                            <PayButton onClick={() => /*!blocked &&*/ navigate('/payment')}>Pagar</PayButton>
+                            <PayButton onClick={() => /*!blocked &&*/ navigate('/payment')}>Finalizar</PayButton>
                         </OrderBox>
                     </Wrapper>
                 }

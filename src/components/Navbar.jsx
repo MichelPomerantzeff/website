@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Badge } from "@mui/material"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { ShoppingCartOutlined, Home, InfoOutlined as Info, AccountCircle as User, ArrowDropDown as Down, Menu } from "@mui/icons-material"
 import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
 import { useContext, useState, useEffect, useRef } from "react"
@@ -150,6 +150,8 @@ const LoggedIn = styled.div`
 function Navbar(props) {
 
     const [user] = useAuthState(auth)
+
+    const navigate = useNavigate()
 
     const { products } = useContext(GlobalContext)
 
@@ -307,7 +309,7 @@ function Navbar(props) {
                                 isLogoutOpen &&
                                 <DropdownBox>
                                     <DropdownBox>
-                                        <DropdownOption>Historico de pedidos</DropdownOption>
+                                        <DropdownOption onClick={() => navigate('/orders')}>Historico de pedidos</DropdownOption>
                                         <DropdownOption onClick={signUserOut}>Sair</DropdownOption>
                                     </DropdownBox>
                                 </DropdownBox>

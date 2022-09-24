@@ -2,9 +2,10 @@ import styled from "styled-components"
 import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
 
 const AboutPage = styled.div`
+    flex: 1;
+    display: flex;
     `
 const Container = styled.div`
-    height: 90vh;
     display: flex;
     align-items: center;
     margin: auto;

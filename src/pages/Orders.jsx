@@ -3,14 +3,24 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import styled from "styled-components"
 import { auth, db } from "../firebase"
 import Order from "../components/Order"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
+import { Navigate } from "react-router-dom"
+
 
 const OrdersContainer = styled.div`
-    border: solid 1px red;
-    height: 80vh;
+    /* border: solid 1px red; */
+    flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    `
+const Header = styled.h1`
+    
+    margin: 20px;
+
+    ${bigTablet({ fontSize: "1.5rem" })}
+    ${mobile({ fontSize: "1rem", })}
     `
 
 const OrdersWrapper = styled.h1`
@@ -22,20 +32,20 @@ const EmptyOrderList = styled.div`
     border: solid 1px lightgray;
     border-radius: 10px;
     color: lightgray;
-    padding: 25px;
-    margin: 25px;
+    padding: 50px;
 
+
+    ${bigTablet({ fontSize: "1.2rem" })}
+    ${tablet({ fontSize: "1rem", padding: "35px" })}
+    ${mobile({ fontSize: ".7rem", padding: "25px" })}
     `
-
-
-const b = styled.div``
-const c = styled.div``
 
 function Orders(props) {
 
     const [user] = useAuthState(auth)
 
     const [orders, setOrders] = useState([])
+    
 
     useEffect(() => {
         if (user) {
@@ -60,8 +70,12 @@ function Orders(props) {
 
     return (
         <OrdersContainer>
-            <h1>Seus Pedidos</h1>
+            <Header>Seus Pedidos</Header>
             <OrdersWrapper>
+
+                {
+                    !user && <Navigate to={'/'}/>
+                }
 
                 {
                     orders?.length > 0 ?
