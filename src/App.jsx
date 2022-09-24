@@ -11,10 +11,19 @@ import Drinks from "./pages/Drinks"
 import Dessert from "./pages/Dessert"
 import Combos from "./pages/Combos"
 import Footer from "./components/Footer";
+import Payment from "./pages/Payment";
+import Orders from "./pages/Orders";
+
 import { HashRouter as Router, Routes, Route } from "react-router-dom"
 import { GlobalProvider } from "./context/GlobalState";
 
+import { loadStripe } from "@stripe/stripe-js"
+import { Elements } from "@stripe/react-stripe-js"
+
+
 function App() {
+
+  const promise = loadStripe('pk_test_51Lkc9zLJCDKq1WclAxdNxvoZYM5RxBxxItzQnIGUqQ8FBEk4Pw8kNCwmHT8mFckitwaKTS68LaxfCU3jnMR8H8f100TBUQHObw')
 
   return (
     <Router>
@@ -48,6 +57,19 @@ function App() {
         <Routes>
           <Route path="/cart" element={<Cart />} />
         </Routes>
+
+        <Routes>
+          <Route path="/orders" element={<Orders />} />
+        </Routes>
+
+        <Routes>
+          <Route path="/payment" element={
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
+          } />
+        </Routes>
+
       </GlobalProvider>
       <Footer />
 

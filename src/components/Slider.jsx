@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { ArrowLeftOutlined as LeftArrow, ArrowRightOutlined as RightArrow, Remove as Minus } from "@mui/icons-material"
+import { ArrowLeftOutlined as LeftArrow, ArrowRightOutlined as RightArrow } from "@mui/icons-material"
 import { food, drinks, dessert, combos } from "../data"
 import { useEffect, useState } from "react"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
 import SliderItem from "./SliderItem"
 
 const Container = styled.div`
@@ -98,7 +98,6 @@ function Slider(props) {
     const [slideIndex, setSlideIndex] = useState(0)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     const [itemsPerScreen, setItemsPerScreen] = useState(screenWidth < 600 ? 3 : 4)
-    const [isArroVisible, setIsArrowVisible] = useState(true)
 
     // Set the slider category according to its type (food, drinks, dessert, combos)
     useEffect(() => {
@@ -139,7 +138,7 @@ function Slider(props) {
         return () => window.removeEventListener("resize", updateItemsDisplayed)
     })
 
-    window.scrollTo({top:0})
+    window.scrollTo({ top: 0 })
 
     // Set quantity of progress bar displayed
     let bars = []
@@ -154,19 +153,16 @@ function Slider(props) {
             <Box>
                 <Top>
                     <Header>{props.header}</Header>
-                    {
 
-                        isArroVisible &&
+                    <ButtonContainer>
+                        <ArrowButton onClick={() => handleSlider("left")} direction="left">
+                            <LeftArrow />
+                        </ArrowButton>
+                        <ArrowButton onClick={() => handleSlider("right")} direction="right">
+                            <RightArrow />
+                        </ArrowButton>
+                    </ButtonContainer>
 
-                        <ButtonContainer>
-                            <ArrowButton onClick={() => handleSlider("left")} direction="left">
-                                <LeftArrow />
-                            </ArrowButton>
-                            <ArrowButton onClick={() => handleSlider("right")} direction="right">
-                                <RightArrow />
-                            </ArrowButton>
-                        </ButtonContainer>
-                    }
                 </Top>
                 <Wrapper slideIndex={slideIndex}>
 

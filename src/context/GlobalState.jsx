@@ -33,13 +33,17 @@ export const GlobalProvider = (props) => {
         dispatch({ type: "REMOVE_ITEM_FROM_CART", payload: storedItem })
     }
 
+    const emptyCart = item => {
+        dispatch({ type: "EMPTY_CART", payload: item })
+    }
+
     return (
         <GlobalContext.Provider
             value={{
                 addItemToCart,
                 removeItemFromCart,
+                emptyCart,
                 products: state.products,
-
             }}
         >
             {props.children}

@@ -1,8 +1,9 @@
 import styled from "styled-components"
 import { Remove, Add } from "@mui/icons-material"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
 import { useContext } from "react"
 import { GlobalContext } from "../context/GlobalState"
+import { useNavigate } from "react-router-dom"
 
 const CartPage = styled.div`
     `
@@ -173,6 +174,7 @@ const PayButton = styled.button`
     color: teal;
     background: none;
     border-radius: 10px;
+    cursor: pointer;
     transition: ease .3s;
 
     &:hover{
@@ -201,6 +203,10 @@ const EmptyCart = styled.div`
     `
 
 function Cart(props) {
+
+    const blocked = true // Prevent browser from navigating to checkout
+
+    const navigate = useNavigate()
 
     const { products, addItemToCart, removeItemFromCart } = useContext(GlobalContext)
 
@@ -260,7 +266,7 @@ function Cart(props) {
                                 <Label>Total:</Label>
                                 <Price>R$ {(subtotal + deliveryFee).toFixed(2)}</Price>
                             </SummaryText>
-                            <PayButton>Pagar</PayButton>
+                            <PayButton onClick={() => !blocked && navigate('/payment')}>Pagar</PayButton>
                         </OrderBox>
                     </Wrapper>
                 }

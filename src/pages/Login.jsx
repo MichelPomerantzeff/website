@@ -1,6 +1,8 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { Link, useNavigate } from "react-router-dom"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
+import { useState } from "react"
+import { auth } from "../firebase"
 
 const LoginPage = styled.div``
 
@@ -146,9 +148,21 @@ const Text = styled.h1`
 
 function Login(props) {
 
+    const navigate = useNavigate()
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
     function signIn(e){
         e.preventDefault()
-        console.log("signIn clicked")
+        
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then((auth) => {
+                if (auth) {
+                    navigate('/')
+                }
+            })
+            .catch(error => alert(error.message))
     }
 
     return (
@@ -160,8 +174,8 @@ function Login(props) {
                         <Header>ENTRE COM SEUS DADOS OU CRIE UMA CONTA</Header>
                         <Form>
                             <InputContainer>
-                                <Input type="email" placeholder="Email" />
-                                <Input type="password" placeholder="Senha" />
+                                <Input onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" />
+                                <Input onChange={e => setPassword(e.target.value)} type="password" placeholder="Senha" />
                             </InputContainer>
 
                             <ButtonContainer>

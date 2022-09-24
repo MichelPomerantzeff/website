@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
 
 const Container = styled.div`
     display: flex;

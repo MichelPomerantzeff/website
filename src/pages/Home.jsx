@@ -7,10 +7,11 @@ const Container = styled.div`
 `
 
 function Home() {
+
     return (
         <Container>
-            <Categories bg={"home"}/>
-            <Newsletter bg={"home"}/>
+            <Categories bg={"home"} />
+            <Newsletter bg={"home"} />
         </Container>
     );
 }

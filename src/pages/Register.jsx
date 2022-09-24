@@ -1,7 +1,9 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { ArrowBack } from "@mui/icons-material"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
+import { auth } from "../firebase"
+import { useState } from "react"
 
 const LoginPage = styled.div``
 
@@ -87,8 +89,8 @@ const Input = styled.input`
 
     ${midDesktop({ fontSize: "1.3rem" })}
     ${laptop({ fontSize: "1.1rem" })}
-    ${bigTablet({  })}
-    ${tablet({  })}
+    ${bigTablet({})}
+    ${tablet({})}
     ${mobile({ fontSize: ".8rem" })}
     `
 const ButtonContainer = styled.div`
@@ -113,7 +115,7 @@ const Button = styled.button`
         transition: ease .3s;
     }
 
-    ${laptop({ fontSize: "1.2rem", padding: "12px"})}
+    ${laptop({ fontSize: "1.2rem", padding: "12px" })}
     ${mobile({ fontSize: ".8rem", padding: "9px", borderRadius: "5px" })}
     `
 const WrapperRight = styled.div`
@@ -152,9 +154,20 @@ const Text = styled.h1`
 
 function Login(props) {
 
-    function signUp(e){
+    const navigate = useNavigate()
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    function signUp(e) {
         e.preventDefault()
-        console.log("signUp clicked")
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .then((auth) => {
+                if (auth) {
+                    navigate('/')
+                }
+            })
+            .catch(error => alert(error.message))
     }
 
     return (
@@ -174,8 +187,8 @@ function Login(props) {
                         <Header>CRIE SUA CONTA E VAMOS ÀS COMPRAS</Header>
                         <Form>
                             <InputContainer>
-                                <Input type="email" placeholder="Email" />
-                                <Input type="password" placeholder="Senha" />
+                                <Input onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" />
+                                <Input onChange={e => setPassword(e.target.value)} type="password" placeholder="Senha" />
                             </InputContainer>
 
                             <ButtonContainer>

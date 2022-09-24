@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Remove, Add } from "@mui/icons-material"
 import { useState, useEffect, useContext } from "react"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
 
 import { GlobalContext } from "../context/GlobalState"
 

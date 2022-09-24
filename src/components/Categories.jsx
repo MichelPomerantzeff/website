@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { categories } from "../data"
 import CategoryItem from "./CategoryItem"
 import { Link } from "react-router-dom"
-import { tablet, mobile } from "../responsivity"
+import { tablet, mobile } from "../responsiveness"
 
 const Container = styled.div`
     background: ${props => props.bg === "home" ? "none" : "#e6f1f3"};

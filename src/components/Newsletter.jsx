@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Send } from "@mui/icons-material"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
 
 const Container = styled.div`
     background: ${props => props.bg === "home" ? "#e6f1f3" : "none"};

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Facebook, Instagram, WhatsApp, Twitter, Email, Phone, LocationOn, } from "@mui/icons-material"
-import { laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { laptop, bigTablet, tablet, mobile } from "../responsiveness"
 
 const Container = styled.div`
     background-color: #f1f1db;

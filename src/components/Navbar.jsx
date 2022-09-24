@@ -2,9 +2,12 @@ import styled from "styled-components"
 import { Badge } from "@mui/material"
 import { Link } from "react-router-dom"
 import { ShoppingCartOutlined, Home, InfoOutlined as Info, AccountCircle as User, ArrowDropDown as Down, Menu } from "@mui/icons-material"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsivity"
+import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
 import { useContext, useState, useEffect, useRef } from "react"
 import { GlobalContext } from "../context/GlobalState"
+import { auth } from "../firebase"
+import { useAuthState } from "react-firebase-hooks/auth"
+import { signOut } from "firebase/auth"
 
 
 const Container = styled.div`
@@ -95,15 +98,19 @@ const DropdownBox = styled.div`
     box-shadow: 0 0 5px 0 gray;
     border-radius: 5px;
     top: 100%;
+    right: 0;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     `
 const DropdownOption = styled.div`
-    padding: 10px 50px;
+    padding: 8px 15px;
     color: #36395A;
-    
+    border-radius: 5px;
+
     &:hover{
-        background-color: #007FFF;
-        color: white;
+        background-color: #ececec;
     }
     `
 const Text = styled.div`
@@ -130,15 +137,29 @@ const Right = styled.div`
     align-items: center;
     justify-content: space-evenly;
     `
+const LoggedIn = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 250px;
+    position: relative;
+    cursor: pointer;   
+    `
+
 
 function Navbar(props) {
+
+    const [user] = useAuthState(auth)
 
     const { products } = useContext(GlobalContext)
 
     const [isCategoriesOpen, setIsCategoriesOpen] = useState(false)
     const [isSideMenuOpen, setIsSideMenuOpen] = useState(false)
-    let sideMenuRef = useRef()
+    const [isLogoutOpen, setIsLogoutOpen] = useState(false)
+
     let categoriesRef = useRef()
+    let sideMenuRef = useRef()
+    let logoutRef = useRef()
 
     const cartUnits = products?.reduce((acc, cur) => {
         return cur.units + acc
@@ -150,10 +171,17 @@ function Navbar(props) {
         const isOutside = e => {
             !sideMenuRef.current.contains(e.target) && setIsSideMenuOpen(false)
             !categoriesRef.current.contains(e.target) && setIsCategoriesOpen(false)
+
+            !logoutRef.current?.contains(e.target) && user && setIsLogoutOpen(false)
+            // Getting error on clicking outside whe user is logged out
         }
         document.addEventListener("click", isOutside)
         return () => document.removeEventListener("click", isOutside)
     })
+
+    function signUserOut() {
+        signOut(auth)
+    }
 
 
     return (
@@ -198,7 +226,7 @@ function Navbar(props) {
 
                 </MenuIcon>
                 <Left>
-                    <Link to={"/"} onClick={() => window.scrollY(0)}>
+                    <Link to={"/"}>
                         <MenuItem>
                             <Icon>
                                 <Home />
@@ -253,16 +281,40 @@ function Navbar(props) {
 
                 <Right>
 
-                    <Link to={"/login"}>
-                        <MenuItem>
-                            <Icon>
-                                <User />
-                            </Icon>
+                    {
+                        !user &&
+                        <Link to={"/login"}>
+                            <MenuItem>
+                                <Icon>
+                                    <User />
+                                </Icon>
+                                <Text>
+                                    LOGIN
+                                </Text>
+                            </MenuItem>
+                        </Link>
+                    }
+
+
+                    {
+                        user &&
+                        <LoggedIn onClick={() => setIsLogoutOpen(prev => !prev)} ref={logoutRef}>
+                            <User />
                             <Text>
-                                LOGIN
+                                {user?.email}
                             </Text>
-                        </MenuItem>
-                    </Link>
+                            {
+                                isLogoutOpen &&
+                                <DropdownBox>
+                                    <DropdownBox>
+                                        <DropdownOption>Historico de pedidos</DropdownOption>
+                                        <DropdownOption onClick={signUserOut}>Sair</DropdownOption>
+                                    </DropdownBox>
+                                </DropdownBox>
+                            }
+                        </LoggedIn>
+                    }
+
 
                     <Link to={"/cart"}>
                         <MenuItem>

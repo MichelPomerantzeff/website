@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { bigTablet, tablet, mobile } from "../responsivity"
+import { bigTablet, tablet, mobile } from "../responsiveness"
 
 const Container = styled.div`
     background-color: teal;
