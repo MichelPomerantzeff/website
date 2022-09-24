@@ -110,6 +110,8 @@ function Slider(props) {
         } else {
             setSelector(combos)
         }
+
+        window.scrollTo({ top: 0 })
     }, [props.header])
 
     // Set direction of image slider
@@ -137,8 +139,6 @@ function Slider(props) {
         window.addEventListener("resize", updateItemsDisplayed)
         return () => window.removeEventListener("resize", updateItemsDisplayed)
     })
-
-    window.scrollTo({ top: 0 })
 
     // Set quantity of progress bar displayed
     let bars = []

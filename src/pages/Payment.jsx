@@ -6,9 +6,8 @@ import { useElements, useStripe, CardElement } from "@stripe/react-stripe-js"
 import axios from "../axios"
 import { auth, db } from "../firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
+import { bigTablet, tablet, mobile } from "../responsiveness"
 import { ArrowBack } from "@mui/icons-material"
-
 
 
 const PaymentPage = styled.div`

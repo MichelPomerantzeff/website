@@ -70,10 +70,9 @@ const SideMenuOption = styled.span`
     `
 const Left = styled.div`
     /* background-color: blue; */
-    width: 25%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 20px;
 
     ${bigTablet({ display: "none" })}
     `
@@ -97,14 +96,17 @@ const DropdownBox = styled.div`
     background-color: white;
     box-shadow: 0 0 5px 0 gray;
     border-radius: 5px;
-    top: 100%;
-    right: 0;
-    position: absolute;
     display: flex;
     flex-direction: column;
+    min-width: 100px;
     width: 100%;
+    top: 100%;
+    position: absolute;
+
+    ${mobile({ minWidth: "80px",})}
     `
 const DropdownOption = styled.div`
+    text-align: center;
     padding: 8px 15px;
     color: #36395A;
     border-radius: 5px;
@@ -112,6 +114,10 @@ const DropdownOption = styled.div`
     &:hover{
         background-color: #ececec;
     }
+
+    ${bigTablet({ fontSize: ".8rem"})}
+    ${mobile({ fontSize: ".6rem"})}
+
     `
 const Text = styled.div`
     ${bigTablet({ display: "none" })}
@@ -132,10 +138,12 @@ const Logo = styled.h1`
     `
 const Right = styled.div`
     /* background-color: red; */
-    width: 20%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 20px;
+
+    ${mobile({ gap: "5px" })}
+
     `
 const LoggedIn = styled.div`
     display: flex;

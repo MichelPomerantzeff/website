@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import styled from "styled-components"
 import { auth, db } from "../firebase"
 import Order from "../components/Order"
-import { midDesktop, laptop, bigTablet, tablet, mobile } from "../responsiveness"
+import { bigTablet, tablet, mobile } from "../responsiveness"
 import { Navigate } from "react-router-dom"
 
 
@@ -11,32 +11,37 @@ const OrdersContainer = styled.div`
     /* border: solid 1px red; */
     flex: 1;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     `
 const Header = styled.h1`
     /* background: blue; */
     margin-top: 150px;
-
-    ${bigTablet({ fontSize: "1.5rem" })}
-    ${mobile({ fontSize: "1rem", })}
+    ${bigTablet({ marginTop: "100px", fontSize: "1.5rem" })}
+    ${mobile({ marginTop: "80px", fontSize: "1rem", })}
     `
 const OrdersWrapper = styled.h1`
-    /* background: red; */
+    /* background: green; */
+    width: 100%;
+    padding: 30px 0;
     flex: 1;
     display: flex;
+    flex-direction: column;
+    `
+const OrderBox = styled.div`
+    /* background: red; */
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
     `
-
 const EmptyOrderList = styled.div`
     border: solid 1px lightgray;
     border-radius: 10px;
     color: lightgray;
     padding: 50px;
     margin: auto;
-
 
     ${bigTablet({ fontSize: "1.2rem" })}
     ${tablet({ fontSize: "1rem", padding: "35px" })}
@@ -76,18 +81,20 @@ function Orders(props) {
             <Header>Seus Pedidos</Header>
             <OrdersWrapper>
 
-                {!user && <Navigate to={'/'} />}
+                <OrderBox>
+                    {!user && <Navigate to={'/'} />}
 
-                {
-                    orders?.length > 0 ?
-                        orders.map(order => (
-                            <Order key={order.id} order={order} />
-                        ))
-                        :
-                        <EmptyOrderList>
-                            Voce ainda nao tem nenhum pedido realizado !!!
-                        </EmptyOrderList>
-                }
+                    {
+                        orders?.length > 0 ?
+                            orders.map(order => (
+                                <Order key={order.id} order={order} />
+                            ))
+                            :
+                            <EmptyOrderList>
+                                Voce ainda nao tem nenhum pedido realizado !!!
+                            </EmptyOrderList>
+                    }
+                </OrderBox>
 
             </OrdersWrapper>
         </OrdersContainer>
