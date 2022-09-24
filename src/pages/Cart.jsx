@@ -204,7 +204,8 @@ const EmptyCart = styled.div`
 
 function Cart(props) {
 
-    const blocked = true // Prevent browser from navigating to checkout
+    // Prevent browser from navigating to checkout
+    // const blocked = true 
 
     const navigate = useNavigate()
 
@@ -266,7 +267,7 @@ function Cart(props) {
                                 <Label>Total:</Label>
                                 <Price>R$ {(subtotal + deliveryFee).toFixed(2)}</Price>
                             </SummaryText>
-                            <PayButton onClick={() => !blocked && navigate('/payment')}>Pagar</PayButton>
+                            <PayButton onClick={() => /*!blocked &&*/ navigate('/payment')}>Pagar</PayButton>
                         </OrderBox>
                     </Wrapper>
                 }
