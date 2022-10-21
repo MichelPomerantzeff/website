@@ -1,5 +1,8 @@
-
 # Movie App
+
+![eCommerce](https://user-images.githubusercontent.com/96065240/197269797-da9e74aa-be3f-493a-80be-1cdc7e90b0b7.png)
+
+
 ## 💻 Project
 
 React-firebase-hook facilitates the management of user state, keeping track of when they are logged in or logged out. Stripe API deals with creating and accepting card payment sources. Firebase for relational database schema allows for easy retrieval of product and order data.
