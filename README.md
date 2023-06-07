@@ -37,7 +37,7 @@ npm install
 ```bash
 npm start
 ```
-##### To see a live demo of this project, click [here](https://michelpomerantzeff.github.io/movie-app)
+##### To see a live demo of this project, click [here](https://website-906a4.web.app/#/)
 
 ### Author
 - Michel Pomerantzeff
