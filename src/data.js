@@ -44,3 +44,8 @@ export const categories = [
     { id: "dessert", title: "Doces", image:"./images/categories/dessert.jpg"},
     { id: "combos", title: "Combos", image:"./images/categories/combos.jpg"},
 ]
+
+export const downloadAppImages = [
+    { id: "playStore", image: "./images/download-app-img/play-store.png"},
+    { id: "appleStore", image: "./images/download-app-img/apple-store.png"}
+]

@@ -196,7 +196,7 @@ function Login(props) {
                 <WrapperRight>
                     <Right>
                         <Text>
-                            Aqui da pra colocar uma imagem de fundo, tipo comida, ou entao alguma mensagem divulgando promocoes ou itens destacados etc.
+                            {/* Reserverd for image or text  */}
                         </Text>
                     </Right>
                 </WrapperRight>

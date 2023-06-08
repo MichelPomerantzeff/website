@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { Facebook, Instagram, WhatsApp, Twitter, Email, Phone, LocationOn, } from "@mui/icons-material"
 import { laptop, bigTablet, tablet, mobile } from "../responsiveness"
+import { downloadAppImages } from "../data"
 
 const Container = styled.div`
     background-color: #f1f1db;
@@ -9,6 +10,7 @@ const Container = styled.div`
 const Box = styled.div`
     display: flex;
     justify-content: space-between;
+    padding: 40px 0;
 
     ${tablet({ flexDirection: "column" })}
     `
@@ -19,9 +21,7 @@ const Wrapper = styled.div`
     `
 const Left = styled.div`
     /* background-color: red; */
-    
     margin: 5px auto;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,8 +29,18 @@ const Left = styled.div`
 
     ${laptop({ gap: "15px" })}
     ${bigTablet({ gap: "10px" })}
-    ${tablet({ gap: "15px", boxShadow: "0 1.5px 0 0 lightgray", padding: "5px 50px" })}
+    ${tablet({ gap: "15px", padding: "5px 50px" })}
     ${mobile({ gap: "10px", padding: "0 50px" })}
+    `
+const Right = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    ${bigTablet({ fontSize: ".8rem" })}
+    ${tablet({ marginBottom: "10px" })}
+    ${mobile({ fontSize: ".65rem" })}
     `
 const Title = styled.span`
     font-size: 1.2rem;
@@ -43,33 +53,20 @@ const Title = styled.span`
 const IconsWrapper = styled.div`
     display: flex;
     align-items: center;
-    gap: 80px;  
+    gap: 30px;  
 
-    ${laptop({ gap: "40px" })}
-    ${bigTablet({ gap: "30px" })}
-    ${tablet({ gap: "50px" })}
     ${mobile({ gap: "20px" })}
-    
     `
 const SocialMediaIcon = styled.div`
-    color: ${props => props.name === "facebook" && "#2856b9"};
-    color: ${props => props.name === "instagram" && "#fa8e37"};
-    color: ${props => props.name === "whatsapp" && "#25d366"};
-    color: ${props => props.name === "twitter" && "#1DA1F2"};
     cursor: pointer;
     transition: all .2s ease-in-out;
-    transform: scale(2);  
+    transform: scale(1.2);  
     
     &:hover {
-        color: white;
-        background-color: ${props => props.name === "facebook" && "#2856b9"};
-        background-color: ${props => props.name === "instagram" && "#fa8e37"};
-        background-color: ${props => props.name === "whatsapp" && "#25d366"};
-        background-color: ${props => props.name === "twitter" && "#1DA1F2"};
-        box-shadow: ${props => props.name === "facebook" && "0 0 3px 5px #2856b9"};
-        box-shadow: ${props => props.name === "instagram" && "0 0 3px 5px #fa8e37"};
-        box-shadow: ${props => props.name === "whatsapp" && "0 0 3px 5px #25d366"};
-        box-shadow: ${props => props.name === "twitter" && "0 0 3px 5px #1DA1F2"};
+        color: ${props => props.name === "facebook" && "#2856b9"};
+        color: ${props => props.name === "instagram" && "#fa8e37"};
+        color: ${props => props.name === "whatsapp" && "#25d366"};
+        color: ${props => props.name === "twitter" && "#1DA1F2"};
         border-radius: 3px;
         transition: all .1s ease-in-out;
         opacity: .9;  
@@ -80,23 +77,35 @@ const SocialMediaIcon = styled.div`
     ${tablet({ transform: "scale(1.5)" })}
     ${mobile({ transform: "scale(1)" })}
     `
-const Right = styled.div`
+const Center = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 30px;
 
-    ${bigTablet({ fontSize: ".8rem" })}
-    ${tablet({ marginBottom: "10px" })}
+    ${tablet({ padding: "40px 0" })}
     ${mobile({ fontSize: ".65rem" })}
     `
+const DownloadAppWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 30px;  
+
+    ${mobile({ gap: "20px" })}
+    `
+const DownloadAppImage = styled.img`
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    ${laptop({ width: "100px"})}
+    
+    `
+
 const ContactBox = styled.div`
     display: flex;
     align-items: center;
-    height: 50px;
-
-    ${laptop({ height: "45px" })}
-    ${bigTablet({ height: "35px" })}
-    ${mobile({ height: "25px" })}
     `
 const ContactIcon = styled.div`
     margin-right: 5px;
@@ -128,7 +137,7 @@ function Footer(props) {
                 <Wrapper>
                     <Left>
 
-                        <Title>Redes sociais</Title>
+                        <Title>Social Medias</Title>
 
                         <IconsWrapper>
                             <SocialMediaIcon name={"facebook"} >
@@ -152,13 +161,29 @@ function Footer(props) {
                 </Wrapper>
 
                 <Wrapper>
+                    <Center>
+
+                        <Title>Download our app</Title>
+
+                        <DownloadAppWrapper>
+
+                            {downloadAppImages.map(img => (
+                                <DownloadAppImage src={img.image} key={img.id} />
+                            ))}
+                            
+                        </DownloadAppWrapper>
+
+                    </Center>
+                </Wrapper>
+
+                <Wrapper>
                     <Right>
                         <ContactBox>
                             <ContactIcon>
                                 <LocationOn />
                             </ContactIcon>
                             <Text>
-                                Rua: Nome da Rua, 99 - Vila Mariana - Sao Paulo
+                                99 Street Name - City 
                             </Text>
                         </ContactBox>
 
@@ -167,7 +192,7 @@ function Footer(props) {
                                 <Phone />
                             </ContactIcon>
                             <Text>
-                                (11) 999 999 999
+                                +99 999 999 999
                             </Text>
                         </ContactBox>
 
@@ -176,7 +201,7 @@ function Footer(props) {
                                 <Email />
                             </ContactIcon>
                             <Text>
-                                Quitandadageralda@hotmail.com
+                                ecommerce@example.com
                             </Text>
                         </ContactBox>
 
@@ -185,7 +210,7 @@ function Footer(props) {
             </Box>
 
             <CopyRight>
-                &copy; Geralda Mattos 2022
+                &copy; All rights reserved 2022
             </CopyRight>
 
         </Container>

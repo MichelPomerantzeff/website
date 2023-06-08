@@ -12,7 +12,7 @@ import { signOut } from "firebase/auth"
 
 const Container = styled.div`
     box-sizing: border-box;
-    background-color: #f1f1db;
+    background-color: white;
     box-shadow: 0 0 5px 0 gray;
     color: #36395A;
     height: 70px;
@@ -84,7 +84,7 @@ const MenuItem = styled.button`
     color: #36395A;
     font-weight: 600;
     border-radius: 10px;
-    padding: 5px;
+    padding: 8px;
     position: relative;
     cursor: pointer;
 
@@ -285,7 +285,7 @@ function Navbar(props) {
 
                 <Center>
                     <Logo>
-                        QUITANDA DA GERALDA
+                        E-Commerce
                     </Logo>
                 </Center>
 

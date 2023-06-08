@@ -36,8 +36,6 @@ function App() {
     <Router>
       <GlobalProvider>
 
-
-
         <Routes>
           <Route path="/"
             element={<AppContainer>

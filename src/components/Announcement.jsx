@@ -22,7 +22,7 @@ const Container = styled.div`
 function Announcement(props) {
     return (
         <Container>
-            Super Promoção! Entrega Grátis para Pedidos Acima de R$50
+            Great Deal! Free delivery for orders over €50
         </Container>
     );
 }
