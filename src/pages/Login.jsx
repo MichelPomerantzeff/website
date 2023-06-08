@@ -171,23 +171,23 @@ function Login(props) {
 
                 <WrapperLeft>
                     <Left>
-                        <Header>ENTRE COM SEUS DADOS OU CRIE UMA CONTA</Header>
+                        <Header>LOGIN OR CREATE AN ACCOUNT</Header>
                         <Form>
                             <InputContainer>
                                 <Input onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" />
-                                <Input onChange={e => setPassword(e.target.value)} type="password" placeholder="Senha" />
+                                <Input onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" />
                             </InputContainer>
 
                             <ButtonContainer>
-                                <Button type="submit" onClick={signIn}>Entrar</Button>
+                                <Button type="submit" onClick={signIn}>Sign in</Button>
 
                                 <Link style={{ textDecoration: "none" }} to={"/register"}>
-                                    <Button toggle={"toggle"} >Criar conta</Button>
+                                    <Button toggle={"toggle"} >Create account</Button>
                                 </Link>
                             </ButtonContainer>
 
                             <ForgotPassword>
-                                Esqueceu a senha?
+                                Forgot password?
                             </ForgotPassword>
                         </Form>
                     </Left>

@@ -29,7 +29,7 @@ function About(props) {
         <AboutPage>
             <Container>
                 <Text>
-                    Area dedicada a uma explicacao sobre a Quitanda da Geralda (como surgiu, qual eh a ideia e/ou foco do negocio, publico alvo e coisas do genero).
+                Section dedicated to an explanation about the website (how it emerged, what the idea and/or focus of the business is, target audience, and more).
                 </Text>
             </Container>
         </AboutPage>

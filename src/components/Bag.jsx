@@ -82,13 +82,13 @@ function Cart(props) {
                 <Center>
 
                     <EmptyBox>
-                    <Title>
-                        SUA SACOLA ESTÁ VAZIA
-                    </Title>
+                        <Title>
+                            YOUR CART IS EMPTY
+                        </Title>
 
-                    <Text>
-                        Navegue pelas categorias ou faça uma busca por produtos.
-                    </Text>
+                        <Text>
+                            Navegue pelas categorias ou faça uma busca por produtos.
+                        </Text>
                     </EmptyBox>
 
                 </Center>

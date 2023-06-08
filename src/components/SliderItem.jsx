@@ -136,7 +136,7 @@ function SliderItem(props) {
                 <Image src={props.item.image} style={{ backgroundColor: `${props.item.bg}` }} />
             </ImgContainer>
             <Text>{props.item.title}</Text>
-            <Text>R$ {props.item.price}</Text>
+            <Text>€ {props.item.price}</Text>
 
             <ButtonContainer>
                 <CountButton onClick={() => removeItemFromCart(props.item) } isLargeButton={isLargeButton} icon={"minus"}>
@@ -147,7 +147,7 @@ function SliderItem(props) {
                     <CountIcon>
                         <Add />
                     </CountIcon>
-                    <ButtonText isLargeButton={isLargeButton}>ADICIONAR</ButtonText>
+                    <ButtonText isLargeButton={isLargeButton}>Add to cart</ButtonText>
                 </CountButton>
             </ButtonContainer>
 

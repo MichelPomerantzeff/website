@@ -181,21 +181,21 @@ function Login(props) {
                                 <Icon>
                                     <ArrowBack />
                                 </Icon>
-                                VOLTAR
+                                BACK
                             </GoBack>
                         </Link>
-                        <Header>CRIE SUA CONTA E VAMOS ÀS COMPRAS</Header>
+                        <Header>CREATE ACCOUNT</Header>
                         <Form>
                             <InputContainer>
                                 <Input onChange={e => setEmail(e.target.value)} type="email" placeholder="Email" />
-                                <Input onChange={e => setPassword(e.target.value)} type="password" placeholder="Senha" />
+                                <Input onChange={e => setPassword(e.target.value)} type="password" placeholder="Password" />
                             </InputContainer>
 
                             <ButtonContainer>
-                                <Button type="submit" onClick={signUp}>Continuar</Button>
+                                <Button type="submit" onClick={signUp}>Sign up</Button>
 
                                 <Link to={"/login"}>
-                                    <Button toggle={"toggle"} >JÁ TENHO UMA CONTA</Button>
+                                    <Button toggle={"toggle"} >ALREADY HAVE AN ACCOUNT</Button>
                                 </Link>
 
                             </ButtonContainer>

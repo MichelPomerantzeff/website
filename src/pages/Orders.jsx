@@ -78,7 +78,7 @@ function Orders(props) {
 
     return (
         <OrdersContainer>
-            <Header>Seus Pedidos</Header>
+            <Header>Orders history</Header>
             <OrdersWrapper>
 
                 <OrderBox>
@@ -91,7 +91,7 @@ function Orders(props) {
                             ))
                             :
                             <EmptyOrderList>
-                                Voce ainda nao tem nenhum pedido realizado !!!
+                                You have no orders yet
                             </EmptyOrderList>
                     }
                 </OrderBox>

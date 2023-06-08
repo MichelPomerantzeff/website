@@ -215,23 +215,23 @@ function Payment(props) {
 
             <Header>
                 <Logo>LOGO</Logo>
-                <Text><strong>{cart} {cart > 1 ? "produtos" : "produto"}</strong> no carrinho</Text>
-                <Text>Total a pagar: <strong>R$ {total}</strong></Text>
+                <Text><strong>{cart} {cart > 1 ? "items" : "item"}</strong> registered</Text>
+                <Text>Total: <strong>€ {total}</strong></Text>
             </Header>
 
             <GoBack onClick={() => navigate("/cart", { replace: true })}>
                 <Icon>
                     <ArrowBack />
                 </Icon>
-                VOLTAR
+                BACK
             </GoBack>
 
             <PaymentContainer>
 
 
                 <Card>
-                    <Text>Dados do cartao</Text>
-                    <Input placeholder="Titular do cartao" required/>
+                    <Text>Card details</Text>
+                    <Input placeholder="Card holder" required/>
                     <Form onSubmit={handleSubmit}>
                         <CardDetails>
                             <CardElement onChange={handleChange} />
@@ -242,7 +242,7 @@ function Payment(props) {
                             status={disabled}
                         >
                             <span>
-                                {processing ? <p>Processing</p> : "Pagar"}
+                                {processing ? <p>Processing</p> : "Pay"}
                             </span>
                         </Button>
                     </Form>

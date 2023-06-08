@@ -223,7 +223,7 @@ function Cart(props) {
         <CartPage>
             <Container>
 
-                <Header>SEU CARRINHO</Header>
+                <Header>YOUR CART</Header>
 
                 {products.length > 0 &&
                     <Wrapper>
@@ -235,7 +235,7 @@ function Cart(props) {
                                             <Image src={product.image} />
                                             <Description>
                                                 <Label>{product.title}</Label>
-                                                <Price>R$ {product.price}</Price>
+                                                <Price>€ {product.price}</Price>
                                             </Description>
                                             <ButtonContainer>
                                                 <CountButton onClick={() => removeItemFromCart(product)} type={"minus"}>
@@ -254,27 +254,27 @@ function Cart(props) {
                         </Products>
 
                         <OrderBox>
-                            <Header>RESUMO DA COMPRA</Header>
+                            <Header>ORDER DETAILS</Header>
                             <SummaryText>
                                 <Label>Subtotal:</Label>
-                                <Price>R$ {subtotal.toFixed(2)}</Price>
+                                <Price>€ {subtotal.toFixed(2)}</Price>
                             </SummaryText>
                             <SummaryText>
-                                <Label>Taxa de Entrega:</Label>
-                                <Price>{deliveryFee === 0 ? "Entrega Gratis" : `R$ ${deliveryFee}`}</Price>
+                                <Label>Delivery Fee:</Label>
+                                <Price>{deliveryFee === 0 ? "Free Delivery" : `€ ${deliveryFee}`}</Price>
                             </SummaryText>
                             <SummaryText type="total">
                                 <Label>Total:</Label>
-                                <Price>R$ {(subtotal + deliveryFee).toFixed(2)}</Price>
+                                <Price>€ {(subtotal + deliveryFee).toFixed(2)}</Price>
                             </SummaryText>
-                            <PayButton onClick={() => /*!blocked &&*/ navigate('/payment')}>Finalizar</PayButton>
+                            <PayButton onClick={() => /*!blocked &&*/ navigate('/payment')}>Payment</PayButton>
                         </OrderBox>
                     </Wrapper>
                 }
 
                 {products.length === 0 &&
                     <EmptyCart>
-                        Seu carrinho esta vazio!!!
+                        Your cart is empty
                     </EmptyCart>
                 }
 

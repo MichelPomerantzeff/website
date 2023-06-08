@@ -208,23 +208,23 @@ function Navbar(props) {
 
                         < SideMenu >
                             <Link to={"/"}>
-                                <SideMenuOption>Inicio</SideMenuOption>
+                                <SideMenuOption>Home</SideMenuOption>
                             </Link>
 
                             <Link to={"/about"}>
-                                <SideMenuOption>Sobre</SideMenuOption>
+                                <SideMenuOption>About</SideMenuOption>
                             </Link>
 
                             <Link to={"/food"}>
-                                <SideMenuOption>Comida</SideMenuOption>
+                                <SideMenuOption>Food</SideMenuOption>
                             </Link>
 
                             <Link to={"/drinks"}>
-                                <SideMenuOption>Bebidas</SideMenuOption>
+                                <SideMenuOption>Drinks</SideMenuOption>
                             </Link>
 
                             <Link to={"/dessert"}>
-                                <SideMenuOption>Doces</SideMenuOption>
+                                <SideMenuOption>Desserts</SideMenuOption>
                             </Link>
 
                             <Link to={"/combos"}>
@@ -241,7 +241,7 @@ function Navbar(props) {
                             <Icon>
                                 <Home />
                             </Icon>
-                            <Text>INICIO</Text>
+                            <Text>HOME</Text>
                         </MenuItem>
                     </Link>
 
@@ -250,7 +250,7 @@ function Navbar(props) {
                             <Icon>
                                 <Info />
                             </Icon>
-                            <Text>SOBRE</Text>
+                            <Text>ABOUT</Text>
                         </MenuItem>
                     </Link>
 
@@ -258,21 +258,21 @@ function Navbar(props) {
                         <Icon>
                             <Down />
                         </Icon>
-                        <Text>CATEGORIAS</Text>
+                        <Text>OPTIONS</Text>
 
                         {
                             isCategoriesOpen &&
 
                             <DropdownBox>
                                 <Link to={"/food"}>
-                                    <DropdownOption>Comida</DropdownOption>
+                                    <DropdownOption>Food</DropdownOption>
                                 </Link>
 
                                 <Link to={"/drinks"}>
-                                    <DropdownOption>Bebidas</DropdownOption>
+                                    <DropdownOption>Drinks</DropdownOption>
                                 </Link>
                                 <Link to={"/dessert"}>
-                                    <DropdownOption>Doces</DropdownOption>
+                                    <DropdownOption>Desserts</DropdownOption>
                                 </Link>
                                 <Link to={"/combos"}>
                                     <DropdownOption>Combos</DropdownOption>
@@ -334,7 +334,7 @@ function Navbar(props) {
                                 </Icon>
                             </Badge>
                             <Text>
-                                CARRINHO
+                                CART
                             </Text>
                         </MenuItem>
                     </Link>

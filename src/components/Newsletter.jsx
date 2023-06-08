@@ -74,8 +74,8 @@ const Button = styled.button`
 function Newsletter(props) {
     return (
         <Container bg={props.bg}>
-            <Title>Novidades</Title>
-            <Description>Receba notificações sobre descontos e novidades por email.</Description>
+            <Title>Newsletter</Title>
+            <Description>Great deals are always around the corner.</Description>
             <InputContainer>
                 <Input placeholder="Email" />
                 <Button>
