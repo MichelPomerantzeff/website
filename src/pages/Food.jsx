@@ -10,8 +10,8 @@ const Container = styled.div`
 function Food(props) {
     return (
         <Container>
-            <Slider filter={"food"} header={"Comida"} />
-            <Categories filter={"food"} header={"Comida"} />
+            <Slider filter={"food"} header={"Food"} />
+            <Categories filter={"food"} header={"Food"} />
             <Newsletter />
         </Container>
     );

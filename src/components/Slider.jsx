@@ -101,11 +101,11 @@ function Slider(props) {
 
     // Set the slider category according to its type (food, drinks, dessert, combos)
     useEffect(() => {
-        if (props.header === "Comida") {
+        if (props.header === "Food") {
             setSelector(food)
-        } else if (props.header === "Bebidas") {
+        } else if (props.header === "Drinks") {
             setSelector(drinks)
-        } else if (props.header === "Doces") {
+        } else if (props.header === "Dessert") {
             setSelector(dessert)
         } else {
             setSelector(combos)
