@@ -5,8 +5,8 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 520px;
-    width: 380px;
+    height: 420px;
+    width: 300px;
     margin: 20px;
     opacity: .8;
     position: relative;
@@ -14,8 +14,6 @@ const Container = styled.div`
     overflow: hidden;
     border-radius: 5px;
 
-    ${midDesktop({ width: "360px", height: "480px" })}
-    ${laptop({ width: "320px", height: "450px" })}
     ${bigTablet({ width: "250px", height: "370px", margin: "15px"})}
     ${tablet({ width: "180px", height: "280px" })}
     ${mobile({ width: "130px", height: "190px", margin: "5px", })}

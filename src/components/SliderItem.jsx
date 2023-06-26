@@ -22,7 +22,7 @@ const Card = styled.div`
     overflow: hidden;
     margin: var(--card-margin);
     
-    &:hover { box-shadow: 0 0 5px 0 gray; transform: translateY(-2px); transition: all .1s ease-in-out;}
+    /* &:hover { box-shadow: 0 0 5px 0 gray; transform: translateY(-2px); transition: all .1s ease-in-out;} */
 
     `
 const ImgContainer = styled.div`

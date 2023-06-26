@@ -21,8 +21,7 @@ const Box = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1400px;
-    
+    width: 1200px;
     overflow: hidden;
     
     
